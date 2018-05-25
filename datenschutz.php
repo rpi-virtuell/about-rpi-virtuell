@@ -1,6 +1,8 @@
 <?php
 
-
+/*
+* Template Name: Datenschutz
+*/
 
 
 /**
