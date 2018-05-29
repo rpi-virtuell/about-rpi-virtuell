@@ -23,3 +23,17 @@ add_action( 'wp_footer', function(){
 	
 	</script><?php
 });
+
+add_filter( 'template_include', 'datenschutz_page_template', 99 );
+
+function datenschutz_page_template( $template ) {
+
+	if ( isset($_GET['frame']) ) {
+		$new_template = locate_template( array( 'datenschutz.php' ) );
+		if ( !empty( $new_template ) ) {
+			return $new_template;
+		}
+	}
+
+	return $template;
+}
